@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">Oil</string>
+    <string name="title_activity_maps">Map</string>
+    <string name="order">Заказ</string>
+    <string name="_25">Номер заказа : 25</string>
+    <string name="address">Адрес:</string>
+    <string name="date">Дата:</string>
+    <string name="customer_info">Информация о заказчике</string>
+    <string name="fullname">Ф.И.О</string>
+    <string name="mail">Е-mail адрес</string>
+</resources>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="@dimen/nav_header_height"
+    android:background="@color/nav_bg_black"
+    android:gravity="bottom"
+    android:orientation="vertical"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:theme="@style/ThemeOverlay.AppCompat.Dark">
+
+    <RelativeLayout
+        android:id="@+id/image_holder_rl_main"
+        android:layout_width="102dp"
+        android:background="@color/black"
+        android:layout_height="102dp">
+
+        <ImageView
+            android:id="@+id/profile_man_iv_main"
+            android:layout_width="match_parent"
+            android:adjustViewBounds="false"
+            android:layout_margin="8dp"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:src="@drawable/company" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/company_name_tv_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@id/image_holder_rl_main"
+        android:layout_marginStart="16dp"
+        android:layout_toEndOf="@id/image_holder_rl_main"
+        android:paddingTop="@dimen/nav_header_vertical_spacing"
+        android:text="@string/storlet_car_rental"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textColor="@color/white"
+        android:textSize="17sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/fleet_number_tv_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/company_name_tv_main"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/image_holder_rl_main"
+        android:text="@string/fleet_120"
+        android:textColor="@color/white"
+        android:textSize="14sp" />
+
+    <com.willy.ratingbar.BaseRatingBar
+
+        android:id="@+id/rating_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="30dp"
+        android:layout_below="@id/fleet_number_tv_main"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="8dp"
+        android:layout_toEndOf="@id/image_holder_rl_main"
+        app:srb_clearRatingEnabled="false"
+        app:srb_clickable="false"
+        app:srb_drawableEmpty="@drawable/ic_star_inactive"
+        app:srb_drawableFilled="@drawable/ic_star_yellow"
+        app:srb_isIndicator="true"
+        app:srb_minimumStars="1"
+        app:srb_numStars="5"
+        app:srb_rating="2"
+        app:srb_starPadding="1dp"
+        app:srb_stepSize="1" />
+</RelativeLayout>

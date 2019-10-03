@@ -1,0 +1,208 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginTop="?attr/actionBarSize">
+
+    <TextView
+        android:id="@+id/edit_driver_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/add_driver"
+        android:textColor="@color/white"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scrollbars="none"
+        app:layout_constraintBottom_toTopOf="@id/add_car_add_vehicle"
+        app:layout_constraintTop_toBottomOf="@id/edit_driver_profile">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/driver_data_holder_cl"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_margin="8dp"
+                android:background="@drawable/add_vehicle_bg">
+
+
+                <ImageView
+                    android:id="@+id/driver_licence_side_a_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="116dp"
+                    android:layout_marginTop="8dp"
+                    android:src="@drawable/ic_image_select_rect"
+                    app:layout_constraintEnd_toStartOf="@id/driver_licence_side_b_iv"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/driver_licence_tv" />
+
+                <ImageView
+                    android:id="@+id/driver_licence_side_b_iv"
+                    android:layout_width="0dp"
+                    android:layout_height="116dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginEnd="8dp"
+                    android:src="@drawable/ic_image_select_rect"
+
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/driver_licence_side_a_iv"
+                    app:layout_constraintTop_toBottomOf="@id/driver_licence_tv" />
+
+                <TextView
+                    android:id="@+id/driver_licence_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:text="@string/driver_s_licence"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="@id/pid_et_edit"
+                    app:layout_constraintTop_toBottomOf="@id/address_et_edit" />
+
+
+                <EditText
+                    android:id="@+id/fullname_et_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="8dp"
+                    android:hint="@string/firstname_lastname"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <EditText
+                    android:id="@+id/pid_et_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/pid"
+                    app:layout_constraintTop_toBottomOf="@id/fullname_et_edit" />
+
+                <EditText
+                    android:id="@+id/address_et_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:hint="@string/address_t"
+                    app:layout_constraintTop_toBottomOf="@id/pid_et_edit" />
+
+                <EditText
+                    android:id="@+id/end_date_et_edit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="8dp"
+                    android:clickable="false"
+                    android:drawableEnd="@drawable/ic_date_range_black_24dp"
+                    android:drawableTint="@color/white"
+                    android:focusable="false"
+                    android:hint="@string/end_of_date"
+                    app:layout_constraintTop_toBottomOf="@id/driver_licence_side_a_iv" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <TextView
+                android:id="@+id/add_car_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/driver_data_holder_cl"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Add car to driver" />
+
+            <ImageView
+                android:id="@+id/add_car_btn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_car_text"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginEnd="8dp"
+                android:adjustViewBounds="true"
+                android:src="@drawable/ic_add_car" />
+
+            <TextView
+                android:id="@+id/login_tv_add_driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/add_car_btn"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/login_username" />
+
+            <TextView
+                android:id="@+id/password_tv_add_driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/login_tv_add_driver"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="8dp"
+                android:text="Password: 684as68wa" />
+
+            <TextView
+                android:id="@+id/generate_new_password_tv_add_driver"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Generate new password"
+                android:background="#5687FC"
+                android:layout_below="@id/login_tv_add_driver"
+                android:padding="3dp"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_toEndOf="@id/password_tv_add_driver" />
+
+        <TextView
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:textAlignment="center"
+            android:layout_below="@id/generate_new_password_tv_add_driver"
+            android:text="@string/send_username_and_password_to_the_driver"
+            android:padding="16dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/add_car_add_vehicle"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <ImageView
+            android:id="@+id/btn_glow_iv_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/button_glow_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </ImageView>
+
+        <Button
+            android:id="@+id/send_btn_add_driver"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/gradient_btn"
+            android:text="@string/menu_send"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/btn_glow_iv_registration"
+            app:layout_constraintEnd_toEndOf="@id/btn_glow_iv_registration"
+            app:layout_constraintStart_toStartOf="@id/btn_glow_iv_registration"
+            app:layout_constraintTop_toTopOf="@id/btn_glow_iv_registration" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

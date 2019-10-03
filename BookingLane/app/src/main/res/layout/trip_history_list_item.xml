@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/trip_item_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="0dp"
+    android:background="@color/white"
+    android:padding="0dp">
+
+    <ImageView
+        android:id="@+id/trip_image"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:src="@drawable/trip_history_map"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+    <TextView
+        android:id="@+id/date_tv_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trip_image"
+        android:layout_alignParentStart="true"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="31.05.2019 / 17:00-18:00"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/price_tv_history"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/trip_image"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:fontFamily="sans-serif-medium"
+        android:text="176$"
+        android:textColor="@color/black"
+        android:textSize="12sp"
+        android:textStyle="bold" />
+
+    <LinearLayout
+        android:id="@+id/from_ll_history"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_vertical"
+        android:layout_marginTop="8dp"
+        android:layout_below="@id/date_tv_history"
+        android:layout_alignStart="@id/date_tv_history">
+
+        <ImageView
+            android:id="@+id/from_iv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_point_marker"
+            android:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/from_tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="From: 368 "
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/to_ll_edit"
+        android:layout_marginTop="8dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/from_ll_history"
+        android:layout_alignStart="@id/date_tv_history">
+
+
+        <ImageView
+            android:id="@+id/to_iv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_point_maker2"
+            android:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/to_tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="To: 368 "
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/to_ll_edit"
+        android:layout_alignStart="@id/date_tv_history"
+        android:layout_marginTop="8dp"
+        android:layout_marginBottom="16dp"
+        android:gravity="center_vertical">
+
+
+        <ImageView
+            android:id="@+id/people_iv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="10dp"
+            android:src="@drawable/ic_people"
+            android:tint="@color/black" />
+
+        <TextView
+            android:id="@+id/people_tv_history"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:fontFamily="sans-serif-medium"
+            android:text="People: 3 "
+            android:textColor="@color/black"
+            android:textSize="12sp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

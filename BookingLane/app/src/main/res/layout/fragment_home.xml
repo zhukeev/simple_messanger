@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/map_holder_layout"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="-12dp"
+            android:layout_weight="1"
+            android:visibility="gone">
+
+            <fragment
+
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+        <LinearLayout
+            android:id="@+id/companies_ll"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:orientation="vertical"
+            android:visibility="visible">
+
+            <TextView
+                android:id="@+id/companies_tv_home"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:text="@string/companies"
+                android:textColor="@color/white"
+                android:textSize="15sp" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/companies1_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingTop="16dp"
+                android:paddingBottom="8dp" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/companies2_recyclerView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:clipToPadding="false"
+                android:paddingTop="8dp"
+                android:paddingBottom="8dp" />
+        </LinearLayout>
+
+
+        <EditText
+            android:singleLine="true"
+            android:layout_marginTop="5dp"
+            android:hint="@string/enter_location"
+            android:id="@+id/searchLocationBTN"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <TextView
+            android:id="@+id/resultPlaceDetailsTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_filter_bg">
+
+            <ImageView
+                android:id="@+id/point_a_iv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_location_point"
+                app:layout_constraintBottom_toBottomOf="@id/location_a_et_map"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_a_et_map" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/location_a_et_map"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/et_bg"
+                android:hint="@string/from"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/point_a_iv_map"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/point_b_iv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_location_point_2"
+                app:layout_constraintBottom_toBottomOf="@id/location_b_et_map"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_b_et_map" />
+
+            <AutoCompleteTextView
+                android:id="@+id/location_b_et_map"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/et_bg"
+                android:hint="@string/to"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/point_a_iv_map"
+                app:layout_constraintTop_toBottomOf="@id/location_a_et_map" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/car_type_recyclerview_main"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="16dp"
+                app:layout_constraintBottom_toTopOf="@id/find_a_car_btn_home"
+                app:layout_constraintTop_toBottomOf="@id/empty_circle_iv_map" />
+
+
+            <EditText
+                android:id="@+id/date_time_et_map"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/et_bg"
+                android:clickable="false"
+                android:focusable="false"
+                android:hint="23/08/2019 22:00"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/plus_iv_map"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/plus_iv_map"
+                app:layout_constraintTop_toTopOf="@id/plus_iv_map" />
+
+            <ImageView
+                android:id="@+id/minus_iv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_circle_minus"
+                app:layout_constraintBottom_toBottomOf="@id/empty_circle_iv_map"
+                app:layout_constraintStart_toStartOf="@id/point_a_iv_map"
+                app:layout_constraintTop_toBottomOf="@id/location_b_et_map"
+                app:layout_constraintTop_toTopOf="@id/empty_circle_iv_map" />
+
+            <ImageView
+                android:id="@+id/empty_circle_iv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_empty_grey_circle"
+                app:layout_constraintStart_toEndOf="@id/minus_iv_map"
+                app:layout_constraintTop_toBottomOf="@id/location_b_et_map" />
+
+            <ImageView
+
+                android:id="@+id/plus_iv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_circle_plus"
+                app:layout_constraintBottom_toBottomOf="@id/empty_circle_iv_map"
+                app:layout_constraintStart_toEndOf="@id/empty_circle_iv_map"
+                app:layout_constraintTop_toBottomOf="@id/location_b_et_map"
+                app:layout_constraintTop_toTopOf="@id/empty_circle_iv_map" />
+
+            <TextView
+                android:id="@+id/people_count_tv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="12"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@id/people_tv_map"
+                app:layout_constraintEnd_toEndOf="@id/empty_circle_iv_map"
+                app:layout_constraintStart_toStartOf="@id/empty_circle_iv_map"
+                app:layout_constraintTop_toTopOf="@id/empty_circle_iv_map" />
+
+            <TextView
+                android:id="@+id/people_tv_map"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="people"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@id/empty_circle_iv_map"
+                app:layout_constraintStart_toStartOf="@id/empty_circle_iv_map"
+                app:layout_constraintTop_toBottomOf="@id/people_count_tv_map" />
+
+            <ImageView
+                android:id="@+id/btn_glow_iv_registration"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/button_glow_bg"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            </ImageView>
+
+            <Button
+                android:id="@+id/find_a_car_btn_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/gradient_btn"
+                android:text="@string/find_a_car"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_glow_iv_registration" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

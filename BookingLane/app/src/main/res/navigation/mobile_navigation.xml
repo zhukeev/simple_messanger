@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.bookinglane.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" />
+
+    <fragment
+        android:id="@+id/nav_company"
+        android:name="com.example.bookinglane.ui.company.CompanyFragment"
+        android:label="@string/companies"
+        tools:layout="@layout/fragment_company" />
+    <fragment
+        android:id="@+id/nav_trip_history"
+        android:name="com.example.bookinglane.ui.trip_history.TripHistoryFragment"
+        android:label="@string/trip_history"
+        tools:layout="@layout/fragment_trip_history" />
+    <fragment
+        android:id="@+id/nav_invoices"
+        android:name="com.example.bookinglane.ui.invoice.InvoiceFragment"
+        android:label="@string/invoice"
+        tools:layout="@layout/fragment_invoices" />
+
+    <fragment
+        android:id="@+id/nav_car_details"
+        android:name="com.example.bookinglane.ui.car_details.CarDetailsFragment"
+        android:label="@string/car_details"
+        tools:layout="@layout/fragment_car_details" />
+
+    <fragment
+        android:id="@+id/nav_result_car_list"
+        android:name="com.example.bookinglane.ui.car_list.ResultCarListFragment"
+        android:label="@string/find_car"
+        tools:layout="@layout/fragment_result_carlist" />
+    <fragment
+        android:id="@+id/nav_book_car"
+        android:name="com.example.bookinglane.ui.bookcar.BookFragment"
+        android:label="@string/book_car"
+        tools:layout="@layout/fragment_book" />
+    <fragment
+        android:id="@+id/nav_profile"
+        android:name="com.example.bookinglane.ui.profile.ProfileFragment"
+        android:label="@string/profile"
+        tools:layout="@layout/fragment_profile">
+        <argument
+            android:name="number"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_profile_edit"
+        android:name="com.example.bookinglane.ui.profile.EditProfileFragment"
+        android:label="@string/user_information"
+        tools:layout="@layout/fragment_edit_profile" />
+
+</navigation>

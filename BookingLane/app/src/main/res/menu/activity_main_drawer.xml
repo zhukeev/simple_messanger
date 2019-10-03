@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home_25"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_trip_history"
+            android:icon="@drawable/ic_trip_history"
+            android:title="@string/trip_history" />
+        <item
+            android:id="@+id/nav_invoices"
+            android:icon="@drawable/ic_earnings_25"
+            android:title="@string/invoices" />
+    </group>
+
+
+
+</menu>

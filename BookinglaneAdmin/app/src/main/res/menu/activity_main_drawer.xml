@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:showIn="navigation_view">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:icon="@drawable/ic_home"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_earnings"
+            android:icon="@drawable/ic_earnings"
+            android:title="@string/earnings" />
+        <item
+            android:id="@+id/nav_your_fleet"
+            android:icon="@drawable/ic_fleet"
+            android:title="@string/your_fleet" />
+        <item
+            android:id="@+id/nav_your_driver"
+            android:icon="@drawable/ic_drivers"
+            android:title="@string/your_drivers" />
+        <item
+            android:id="@+id/nav_driver_trace"
+            android:icon="@drawable/ic_drivers_trace"
+            android:title="@string/driver_trace" />
+        <item
+            android:id="@+id/nav_reservation"
+            android:icon="@drawable/ic_reservations_pro"
+            android:title="@string/reservation_pro_subs" />
+    </group>
+
+</menu>

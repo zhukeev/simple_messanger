@@ -1,0 +1,286 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/transparent"
+        android:orientation="vertical">
+
+        <FrameLayout
+            android:id="@+id/map_holder_layout_book"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginBottom="-12dp"
+            android:layout_weight="1">
+
+            <fragment
+
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" />
+        </FrameLayout>
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/bottom_filter_bg">
+
+            <ImageView
+                android:id="@+id/point_a_iv_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_location_point"
+                app:layout_constraintBottom_toBottomOf="@id/location_a_et_book"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_a_et_book" />
+
+
+            <AutoCompleteTextView
+                android:id="@+id/location_a_et_book"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/et_bg"
+                android:hint="@string/from"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/point_a_iv_book"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <ImageView
+                android:id="@+id/point_b_iv_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:src="@drawable/ic_location_point_2"
+                app:layout_constraintBottom_toBottomOf="@id/location_b_et_book"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/location_b_et_book" />
+
+            <AutoCompleteTextView
+                android:id="@+id/location_b_et_book"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/et_bg"
+                android:hint="@string/to"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/white"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/point_a_iv_book"
+                app:layout_constraintTop_toBottomOf="@id/location_a_et_book" />
+
+
+            <EditText
+                android:id="@+id/date_time_et_book"
+                android:layout_width="0dp"
+                android:layout_height="40dp"
+                android:layout_margin="16dp"
+                android:background="@drawable/et_bg"
+                android:clickable="false"
+                android:focusable="false"
+                android:hint="23/08/2019 22:00"
+                android:paddingStart="10dp"
+                android:paddingEnd="10dp"
+                android:textColorHint="@color/white"
+                android:textSize="12sp"
+                app:layout_constraintBottom_toBottomOf="@id/plus_iv_book"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/plus_iv_book"
+                app:layout_constraintTop_toTopOf="@id/plus_iv_book" />
+
+            <ImageView
+                android:id="@+id/minus_iv_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:src="@drawable/ic_circle_minus"
+                app:layout_constraintBottom_toBottomOf="@id/empty_circle_iv_book"
+                app:layout_constraintStart_toStartOf="@id/point_a_iv_book"
+                app:layout_constraintTop_toBottomOf="@id/location_b_et_book"
+                app:layout_constraintTop_toTopOf="@id/empty_circle_iv_book" />
+
+            <ImageView
+                android:id="@+id/empty_circle_iv_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="8dp"
+                android:src="@drawable/ic_empty_grey_circle"
+                app:layout_constraintStart_toEndOf="@id/minus_iv_book"
+                app:layout_constraintTop_toBottomOf="@id/location_b_et_book" />
+
+            <ImageView
+
+                android:id="@+id/plus_iv_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:src="@drawable/ic_circle_plus"
+                app:layout_constraintBottom_toBottomOf="@id/empty_circle_iv_book"
+                app:layout_constraintStart_toEndOf="@id/empty_circle_iv_book"
+                app:layout_constraintTop_toBottomOf="@id/location_b_et_book"
+                app:layout_constraintTop_toTopOf="@id/empty_circle_iv_book" />
+
+            <TextView
+                android:id="@+id/people_count_tv_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:text="12"
+                android:textColor="@color/white"
+                android:textSize="30sp"
+                app:layout_constraintBottom_toTopOf="@id/people_tv_book"
+                app:layout_constraintEnd_toEndOf="@id/empty_circle_iv_book"
+                app:layout_constraintStart_toStartOf="@id/empty_circle_iv_book"
+                app:layout_constraintTop_toTopOf="@id/empty_circle_iv_book" />
+
+            <TextView
+                android:id="@+id/people_tv_book"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="people"
+                android:textColor="@color/white"
+                android:textSize="13sp"
+                app:layout_constraintEnd_toEndOf="@id/empty_circle_iv_book"
+                app:layout_constraintStart_toStartOf="@id/empty_circle_iv_book"
+                app:layout_constraintTop_toBottomOf="@id/people_count_tv_book" />
+
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/car_layout_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="16dp"
+                android:background="@drawable/carlist_item_bg"
+                android:padding="0dp"
+                app:layout_constraintBottom_toTopOf="@id/btn_glow_iv_book"
+                app:layout_constraintTop_toBottomOf="@id/empty_circle_iv_book">
+
+                <ImageView
+                    android:id="@+id/car_icon_book"
+                    android:layout_width="120dp"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentStart="true"
+                    android:layout_gravity="center"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/suv_toyota"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+
+                <TextView
+                    android:id="@+id/title_tv_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10dp"
+                    android:fontFamily="sans-serif-medium"
+                    android:text="Limo"
+                    android:textColor="@color/black"
+                    android:textSize="16sp"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toEndOf="@id/car_icon_book"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.cardview.widget.CardView
+                    android:layout_width="wrap_content"
+                    android:layout_height="64dp"
+                    android:layout_marginEnd="10dp"
+                    android:clipToPadding="false"
+                    android:paddingTop="10dp"
+                    android:paddingBottom="10dp"
+                    app:cardBackgroundColor="@color/white"
+                    app:cardCornerRadius="10dp"
+                    app:cardElevation="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent">
+
+                    <FrameLayout
+                        android:id="@+id/price_holder_frame_layout_list_item"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:background="@drawable/gradient_btn">
+
+                        <TextView
+                            android:id="@+id/price_tv_book"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_margin="10dp"
+                            android:layout_gravity="center"
+                            android:fontFamily="sans-serif-medium"
+                            android:text="80$"
+                            android:textColor="@color/white"
+                            android:textSize="25sp" />
+                    </FrameLayout>
+                </androidx.cardview.widget.CardView>
+
+                <com.willy.ratingbar.BaseRatingBar
+                    android:id="@+id/rating_bar_book"
+                    android:layout_width="wrap_content"
+                    android:layout_height="30dp"
+                    android:layout_gravity="bottom"
+                    android:layout_marginStart="10dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/car_icon_book"
+                    app:srb_clearRatingEnabled="false"
+                    app:srb_clickable="false"
+                    app:srb_drawableEmpty="@drawable/ic_star_inactive"
+                    app:srb_drawableFilled="@drawable/ic_star_yellow"
+                    app:srb_isIndicator="true"
+                    app:srb_minimumStars="1"
+                    app:srb_numStars="5"
+                    app:srb_rating="2"
+                    app:srb_starPadding="1dp"
+                    app:srb_stepSize="1" />
+
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+            <ImageView
+                android:id="@+id/btn_glow_iv_book"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:src="@drawable/button_glow_bg"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+            </ImageView>
+
+            <Button
+                android:id="@+id/book_car_btn_book"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="32dp"
+                android:layout_marginTop="30dp"
+                android:layout_marginEnd="32dp"
+                android:layout_marginBottom="32dp"
+                android:background="@drawable/gradient_btn"
+                android:text="@string/book_car"
+                android:textColor="@color/white"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@id/btn_glow_iv_book" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

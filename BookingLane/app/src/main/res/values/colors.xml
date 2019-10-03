@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#008577</color>
+    <color name="colorPrimaryDark">#00574B</color>
+    <color name="colorAccent">#000</color>
+
+    <color name="black_overlay">#66000000</color>
+
+    <color name="black">#111315</color>
+    <color name="yellow">#FFB800</color>
+    <color name="inactive_grey">#C4C4C4</color>
+    <color name="grey">#272727</color>
+    <color name="enabled_tv_grey">#3C3C3C</color>
+    <color name="white">#fff</color>
+    <color name="light_green">#CFFFAA</color>
+    <color name="cancel_grey">#BABABA</color>
+    <color name="checked_color_blue">#5685FC</color>
+    <color name="rating_bg_grey">#555555</color>
+    <color name="et_bg_grey">#434956</color>
+</resources>

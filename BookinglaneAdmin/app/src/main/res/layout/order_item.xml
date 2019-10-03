@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/orderLayout_order_item"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingBottom="8dp"
+    android:background="@drawable/driver_box_bg"
+    app:layout_constraintTop_toBottomOf="@id/text_upcoming_trip">
+
+    <ImageView
+        android:id="@+id/point_a_IV_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_point_a_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/point_b_IV_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_point_b_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/point_a_IV_order" />
+
+    <ImageView
+        android:id="@+id/people_IV_order"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:src="@drawable/ic_account_1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/point_b_IV_order" />
+
+    <TextView
+        android:id="@+id/from_tv_order_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/from_asanbay_21"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/point_a_IV_order"
+        app:layout_constraintStart_toEndOf="@id/point_a_IV_order" />
+
+    <TextView
+        android:id="@+id/to_tv_order_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/point_b_IV_order"
+        android:text="@string/to_Osipenko"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/point_b_IV_order"
+        app:layout_constraintStart_toEndOf="@id/point_b_IV_order" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:id="@+id/people_tv_order_item"
+
+        android:layout_marginTop="16dp"
+        android:layout_toEndOf="@id/point_b_IV_order"
+        android:text="@string/people_8"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/people_IV_order"
+        app:layout_constraintStart_toEndOf="@id/people_IV_order" />
+
+    <TextView
+        android:id="@+id/time_tv_order_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/time"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/point_a_IV_order"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/type_car_tv_order_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/limousine"
+        android:textColor="@color/black"
+        app:layout_constraintBottom_toBottomOf="@id/point_b_IV_order"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+    <TextView
+        android:id="@+id/time_of_receipt_tv_order_item"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="@string/time_of_receipt_24_00"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@id/people_IV_order"
+        app:layout_constraintEnd_toEndOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

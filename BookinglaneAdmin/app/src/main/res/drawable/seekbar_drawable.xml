@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@android:id/background"
+        android:gravity="center_vertical|fill_horizontal">
+        <shape
+            android:shape="rectangle"
+            android:tint="@color/car_name_violet">
+            <corners android:radius="10dp" />
+            <size android:height="10dp" />
+            <solid android:color="@color/colorPrimary" />
+        </shape>
+    </item>
+    <item
+        android:id="@android:id/progress"
+        android:gravity="center_vertical|fill_horizontal">
+        <scale android:scaleWidth="100%">
+            <selector>
+                <item
+                    android:drawable="@android:color/transparent"
+                    android:state_enabled="false" />
+                <item>
+                    <shape
+                        android:shape="rectangle">
+                        <corners android:radius="10dp" />
+                        <size android:height="10dp" />
+                        <solid android:color="#000" />
+                        <gradient
+                            android:angle="0"
+                            android:startColor="#568AFD"
+                            android:centerColor="#670DF2"
+                            android:endColor="#851EDF"/>
+                    </shape>
+                </item>
+            </selector>
+        </scale>
+    </item>
+</layer-list>

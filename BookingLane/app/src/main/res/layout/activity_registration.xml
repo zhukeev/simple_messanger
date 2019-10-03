@@ -1,0 +1,167 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/black"
+    tools:context=".activity.RegistrationActivity">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/ic_top_left_bg" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:src="@drawable/ic_bottom_right_bg" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="150dp"
+        android:layout_alignParentTop="true"
+        android:id="@+id/logo_iv_registration"
+        android:layout_centerHorizontal="true"
+        android:src="@drawable/ic_logo_text" />
+
+
+    <TextView
+        android:id="@+id/sms_code_tv_registration"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@id/phone_number_et_registration"
+        android:text="@string/sms_code"
+        android:textColor="@color/white" />
+
+    <LinearLayout
+        android:id="@+id/et_holder_edit_profile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/sms_code_tv_registration"
+        android:layout_centerInParent="true"
+        android:orientation="horizontal">
+
+        <EditText
+            android:id="@+id/n1_et_sms"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+            android:imeOptions="actionGo"
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/n2_et_sms"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:imeOptions="actionGo"
+
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/n3_et_sms"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:imeOptions="actionGo"
+
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+
+            android:textSize="17sp" />
+
+        <EditText
+            android:id="@+id/n4_et_sms"
+            android:layout_width="34dp"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:importantForAutofill="no"
+            android:imeOptions="actionDone"
+
+            android:inputType="numberDecimal"
+            android:textColor="@color/white"
+
+            android:textSize="17sp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_holder_edit_profile"
+        android:layout_alignStart="@id/et_holder_edit_profile"
+        android:layout_marginTop="16dp"
+        android:text="@string/resend"
+        android:textColor="@color/enabled_tv_grey" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/et_holder_edit_profile"
+        android:layout_alignEnd="@id/et_holder_edit_profile"
+        android:layout_marginTop="16dp"
+        android:text="1:00"
+        android:textColor="@color/enabled_tv_grey" />
+
+    <com.github.pinball83.maskededittext.MaskedEditText
+        android:id="@+id/phone_number_et_registration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/logo_iv_registration"
+        android:layout_marginTop="64dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="32dp"
+        android:gravity="center_horizontal"
+        android:imeOptions="actionDone"
+        android:inputType="phone"
+        android:textColor="@color/white"
+        app:mask="+1(xxx) xxx-xxx"
+        app:notMaskedSymbol="x"
+        app:replacementChar="x" />
+
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        android:layout_alignParentBottom="true">
+
+        <ImageView
+            android:id="@+id/btn_glow_iv_registration"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="true"
+            android:src="@drawable/button_glow_bg"
+            app:layout_constraintBottom_toBottomOf="parent">
+
+        </ImageView>
+
+        <Button
+            android:id="@+id/next_btn_registration"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="30dp"
+            android:layout_marginEnd="32dp"
+            android:layout_marginBottom="32dp"
+            android:background="@drawable/gradient_btn"
+            android:text="@string/next"
+            android:textColor="@color/white"
+            app:layout_constraintStart_toStartOf="@id/btn_glow_iv_registration"
+            app:layout_constraintEnd_toEndOf="@id/btn_glow_iv_registration"
+            app:layout_constraintBottom_toBottomOf="@id/btn_glow_iv_registration"
+            app:layout_constraintTop_toTopOf="@id/btn_glow_iv_registration" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

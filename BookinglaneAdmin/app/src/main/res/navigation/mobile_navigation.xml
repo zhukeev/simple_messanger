@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.bookinglaneadmin.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_nav_home_self"
+            app:destination="@id/nav_home"
+            app:launchSingleTop="true" />
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_earnings"
+        android:name="com.example.bookinglaneadmin.ui.earnings.EarningsFragment"
+        android:label="@string/earnings"
+        tools:layout="@layout/fragment_earnings">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_your_fleet"
+        android:name="com.example.bookinglaneadmin.ui.fleet.YourFleetFragment"
+        android:label="@string/your_fleet"
+        tools:layout="@layout/fragment_fleet"/>
+
+    <fragment
+        android:id="@+id/nav_your_driver"
+        android:name="com.example.bookinglaneadmin.ui.drivers.DriversFragment"
+        android:label="@string/your_drivers"
+        tools:layout="@layout/fragment_drivers">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_reservation"
+        android:name="com.example.bookinglaneadmin.ui.reservations_pro_subs.ReservationsProSubsFragment"
+        android:label="@string/trip_history"
+        tools:layout="@layout/fragment_reservation_pro_subs">
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_driver_trace"
+        android:name="com.example.bookinglaneadmin.ui.driver_trace.DriverTraceFragment"
+        android:label="@string/driver_trace"
+        tools:layout="@layout/fragment_driver_trace">
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_vehicle"
+        android:name="com.example.bookinglaneadmin.ui.add_vehicle.AddVehicleFragment"
+        android:label="@string/add_vehicle"
+        tools:layout="@layout/fragment_add_vehicle">
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_add_driver"
+        android:name="com.example.bookinglaneadmin.ui.add_driver.AddDriverFragment"
+        android:label="@string/add_driver"
+        tools:layout="@layout/fragment_add_driver">
+
+    </fragment>
+    <fragment
+        android:id="@+id/nav_car_details"
+        android:name="com.example.bookinglaneadmin.ui.car_details.CarDetailsFragment"
+        android:label="@string/car_details"
+        tools:layout="@layout/fragment_car_details" />
+    <fragment
+        android:id="@+id/nav_order_details"
+        android:name="com.example.bookinglaneadmin.ui.order_details.OrderDetailsFragment"
+        android:label="@string/order_details"
+        tools:layout="@layout/fragment_order_details" />
+    <fragment
+        android:id="@+id/nav_company_profile"
+        android:name="com.example.bookinglaneadmin.ui.company_profile.CompanyProfileFragment"
+        android:label="@string/company_profile"
+        tools:layout="@layout/fragment_company_profile">
+
+    </fragment>
+</navigation>

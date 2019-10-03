@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:focusableInTouchMode="true">
+
+    <EditText
+        android:layout_marginBottom="76dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:hint="@string/name"
+        android:layout_above="@id/payment_method_tv_name_payment_method"
+        android:id="@+id/username_et_name_payment_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" />
+
+    <ImageView
+        android:id="@+id/payment_method_iv_name_payment_method"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginStart="60dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="16dp"
+        android:adjustViewBounds="true"
+        android:src="@drawable/payment_method" />
+
+    <TextView
+
+        android:id="@+id/payment_method_tv_name_payment_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/payment_method_iv_name_payment_method"
+        android:layout_centerHorizontal="true"
+        android:text="@string/payment_method"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+    <CheckBox
+        android:id="@+id/add_later_cb_name_payment_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/payment_method_iv_name_payment_method"
+        android:layout_centerHorizontal="true"
+        android:text="@string/add_later" />
+
+    <TextView
+        android:id="@+id/done_tv_name_payment_method"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="@string/done"
+        android:textColor="@color/black"
+        android:textSize="17sp" />
+
+
+</RelativeLayout>

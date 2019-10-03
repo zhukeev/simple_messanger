@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/car_list_item_c_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="16dp"
+    android:background="@drawable/car_box_bg"
+    android:backgroundTint="@color/white"
+    android:orientation="vertical"
+    android:padding="16dp"
+    >
+
+    <TextView
+        android:id="@+id/id_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="№22422224"
+        android:textColor="@color/black"
+        android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/company_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="Company name"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/client_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Client name"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/date_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/time_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/from_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/to_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/car_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/miles_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/coast_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:layout_marginTop="16dp"
+        android:id="@+id/company_address_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+    <TextView
+        android:id="@+id/phone_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+    <TextView
+        android:id="@+id/email_invoice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Date"
+        android:textColor="@color/black" />
+
+
+</LinearLayout>

@@ -1,0 +1,317 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:id="@+id/text_upcoming_trip"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="?attr/actionBarSize"
+        android:text="@string/upcoming_trip"
+        android:textAlignment="center"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:src="@drawable/upcoming_trip_bg_top"
+        app:layout_constraintBottom_toTopOf="@id/orderLayout" />
+
+    <ImageView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:rotation="-180"
+        android:src="@drawable/upcoming_trip_bg_top"
+        app:layout_constraintTop_toBottomOf="@id/orderLayout" />
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/orderLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@color/rating_bg_violet"
+        android:paddingBottom="16dp"
+        app:layout_constraintTop_toBottomOf="@id/text_upcoming_trip">
+
+        <ImageView
+            android:id="@+id/point_a_IV_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_point_a"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/point_b_IV_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_point_b"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/point_a_IV_order" />
+
+        <ImageView
+            android:id="@+id/people_IV_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:src="@drawable/ic_account"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/point_b_IV_order" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/from_asanbay_21"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/point_a_IV_order"
+            app:layout_constraintStart_toEndOf="@id/point_a_IV_order" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@id/point_b_IV_order"
+            android:text="@string/to_Osipenko"
+
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/point_b_IV_order"
+            app:layout_constraintStart_toEndOf="@id/point_b_IV_order" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_toEndOf="@id/point_b_IV_order"
+            android:text="@string/people_8"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/people_IV_order"
+            app:layout_constraintStart_toEndOf="@id/people_IV_order" />
+
+        <TextView
+            android:id="@+id/time_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/time"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/point_a_IV_order"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/type_car_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/limousine"
+            android:textColor="@color/white"
+            app:layout_constraintBottom_toBottomOf="@id/point_b_IV_order"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+        <TextView
+            android:id="@+id/time_of_receipt_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:text="@string/time_of_receipt_24_00"
+            android:textColor="@color/white"
+            android:textStyle="bold"
+            app:layout_constraintBottom_toBottomOf="@id/people_IV_order"
+            app:layout_constraintEnd_toEndOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+    <TextView
+        android:id="@+id/text_statistics"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/statistics"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/orderLayout" />
+
+    <TextView
+        android:id="@+id/text_your_fleet"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/your_fleet"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/progressbars_cardview_main" />
+
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/progressbars_cardview_main"
+        android:layout_width="match_parent"
+        android:layout_height="182dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="8dp"
+        android:orientation="vertical"
+        app:cardBackgroundColor="#201A47"
+        app:cardCornerRadius="10dp"
+        app:cardElevation="5dp"
+        app:layout_constraintTop_toBottomOf="@id/text_statistics">
+
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/sedan_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:text="@string/sedan"
+                android:textColor="@color/car_name_violet"
+                app:layout_constraintBottom_toTopOf="@id/suv_tv"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/suv_tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/suv"
+                android:textColor="@color/car_name_violet"
+                app:layout_constraintBottom_toTopOf="@id/bus_tv"
+                app:layout_constraintEnd_toEndOf="@id/sedan_tv"
+                app:layout_constraintTop_toBottomOf="@id/sedan_tv" />
+
+            <TextView
+                android:id="@+id/bus_tv"
+                android:layout_width="wrap_content"
+
+                android:layout_height="wrap_content"
+                android:text="@string/bus"
+                android:textColor="@color/car_name_violet"
+                app:layout_constraintBottom_toTopOf="@id/limo_tv"
+                app:layout_constraintEnd_toEndOf="@id/sedan_tv"
+                app:layout_constraintTop_toBottomOf="@id/suv_tv" />
+
+            <TextView
+                android:id="@+id/limo_tv"
+
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginBottom="8dp"
+                android:text="@string/limo"
+                android:textColor="@color/car_name_violet"
+
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="@id/sedan_tv"
+                app:layout_constraintTop_toBottomOf="@id/bus_tv" />
+
+            <com.example.bookinglaneadmin.customView.CustomSeekBar
+                android:id="@+id/seekbarSedan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:layout_marginStart="8dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:longClickable="false"
+                android:padding="0dp"
+                android:progress="55"
+                android:progressDrawable="@drawable/seekbar_drawable"
+                android:splitTrack="false"
+                android:thumb="@null"
+                android:visibility="visible"
+                app:layout_constraintBottom_toBottomOf="@id/sedan_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/sedan_tv" />
+
+            <com.example.bookinglaneadmin.customView.CustomSeekBar
+
+                android:id="@+id/seekbarSuv"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:clickable="false"
+                android:focusable="false"
+                android:longClickable="false"
+                android:padding="0dp"
+                android:progress="55"
+                android:progressDrawable="@drawable/seekbar_drawable"
+                android:splitTrack="false"
+                android:thumb="@null"
+                app:layout_constraintBottom_toBottomOf="@id/suv_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/suv_tv" />
+
+            <com.example.bookinglaneadmin.customView.CustomSeekBar
+
+                android:id="@+id/seekbarBus"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:clickable="true"
+                android:focusable="true"
+                android:longClickable="false"
+                android:padding="0dp"
+                android:progress="55"
+                android:progressDrawable="@drawable/seekbar_drawable"
+                android:splitTrack="false"
+                android:thumb="@null"
+                app:layout_constraintBottom_toBottomOf="@id/bus_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/bus_tv" />
+
+            <SeekBar
+                android:id="@+id/seekbarLimo"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="0dp"
+                android:padding="0dp"
+                android:progress="55"
+                android:progressDrawable="@drawable/seekbar_drawable"
+                android:splitTrack="false"
+                android:thumb="@null"
+                app:layout_constraintBottom_toBottomOf="@id/limo_tv"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/limo_tv" />
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:clipToPadding="false"
+        android:paddingStart="10dp"
+        android:paddingTop="10dp"
+        android:paddingEnd="10dp"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:layout_constraintTop_toBottomOf="@id/text_your_fleet"
+        app:layout_constraintBottom_toBottomOf="parent"
+        />
+</androidx.constraintlayout.widget.ConstraintLayout>

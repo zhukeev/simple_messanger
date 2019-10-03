@@ -1,0 +1,48 @@
+{
+  "project_info": {
+    "project_number": "791728881879",
+    "firebase_url": "https://bookinglaneadmin.firebaseio.com",
+    "project_id": "bookinglaneadmin",
+    "storage_bucket": "bookinglaneadmin.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:791728881879:android:280e85b3fd425f6c5bb092",
+        "android_client_info": {
+          "package_name": "com.example.bookinglaneadmin"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "791728881879-3cmsu79i4a465dvomn5in9uq1to7jjdc.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.bookinglaneadmin",
+            "certificate_hash": "cf08e50a6e2650dd42ade2e1341e576261c6f616"
+          }
+        },
+        {
+          "client_id": "791728881879-2vnnlmk57hqptoeeq83k06p9j3kk8r9n.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyA51CQhgjuMaTCcxm76rregYVqF0STjOqc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "791728881879-2vnnlmk57hqptoeeq83k06p9j3kk8r9n.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
