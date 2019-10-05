@@ -28,7 +28,6 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
         int position = parent.getChildAdapterPosition(view);
 
         if (position % spanCount == 1) {
-            Log.e("TAG", "getItemOffsets: "+spanCount );
             outRect.right = space;
         }
 
@@ -37,7 +36,7 @@ public class SpacesItemDecoration extends RecyclerView.ItemDecoration {
 
 
         // Add top margin only for the first (and the second if it's two span) item to avoid double space between items
-        if (parent.getChildLayoutPosition(view) == 0 || parent.getChildLayoutPosition(view) == 1) {
+        if (parent.getChildLayoutPosition(view) >= spanCount) {
             outRect.top = space;
         } else {
             outRect.top = 0;

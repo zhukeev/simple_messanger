@@ -25,6 +25,9 @@
         <item name="android:windowTranslucentStatus">true</item>
         <item name="android:windowTranslucentNavigation">true</item>
     </style>
-
+    <style name="CustomAppTheme" parent="Theme.AppCompat">
+        <item name="android:textColorPrimaryDisableOnly">#000</item>
+        <item name="colorAccent">@color/colorPrimaryDark</item>
+    </style>
     <dimen name="height_list">50dp</dimen>
 </resources>

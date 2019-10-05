@@ -44,4 +44,18 @@ public class HexColors {
     public static final String VIOLET_3 = "#A431FF";
     public static final String VIOLET_4 = "#8F00FF";
 
+    public static final String PINK_0 = "#FAE4F7";
+    public static final String PINK_1 = "#FACAEE";
+    public static final String PINK_2 = "#FC7FD4";
+    public static final String PINK_3 = "#FE33BA";
+    public static final String PINK_4 = "#FF00A8";
+
+    public static final String ELECTRIC_VIOLET_0 = "#FAE4FF";
+    public static final String ELECTRIC_VIOLET_1 = "#F9CAFF";
+    public static final String ELECTRIC_VIOLET_2 = "#FAB2FF";
+    public static final String ELECTRIC_VIOLET_3 = "#FA33FF";
+    public static final String ELECTRIC_VIOLET_4 = "#FA00FF";
+
+
+
 }

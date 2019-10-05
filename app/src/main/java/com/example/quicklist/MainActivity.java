@@ -1,5 +1,6 @@
 package com.example.quicklist;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.MotionEvent;
@@ -51,7 +52,7 @@ public class MainActivity extends AppCompatActivity implements RecyclerTouchList
             public void onItemClickListener(int position) {
 
                 if (position==getMultiList().size()){
-                    
+                    startActivity(new Intent(MainActivity.this,CreateMultiListActivity.class));
                 }
 
                 Log.e(TAG, "onItemClickListener: "+getMultiList().size() );
