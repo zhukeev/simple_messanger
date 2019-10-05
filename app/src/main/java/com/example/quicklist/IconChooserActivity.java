@@ -1,10 +1,7 @@
 package com.example.quicklist;
 
-import android.content.Context;
-import android.content.ContextWrapper;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
@@ -36,8 +33,6 @@ public class IconChooserActivity extends AppCompatActivity {
     }
 
     private void init() {
-        ContextWrapper cw = new ContextWrapper(IconChooserActivity.this);
-        File path = cw.getDir("emojis", Context.MODE_PRIVATE);
 
         RecyclerView category_rv = findViewById(R.id.icon_choose_rv_icon_chooser);
         category_rv.addItemDecoration(new SpacesItemDecoration(IconChooserActivity.this, 8));
@@ -45,25 +40,25 @@ public class IconChooserActivity extends AppCompatActivity {
         category_rv.setAdapter(new EmojiAdapter(this, getListFiles(getCacheDir()), new OnItemClickListener() {
             @Override
             public void onItemClickListener(int position) {
-                Intent intent = new Intent(IconChooserActivity.this,CreateMultiListActivity.class);
-                intent.putExtra("icon",inFiles.get(position));
+                Intent intent = new Intent(IconChooserActivity.this, CreateMultiListActivity.class);
+                intent.putExtra("icon", inFiles.get(position));
+                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
                 startActivity(intent);
 
             }
         }));
 
 
-
-
     }
 
     private List<File> getListFiles(File parentDir) {
 
-        if (!inFiles.isEmpty()){
+        Queue<File> files = new LinkedList<>(Arrays.asList(Objects.requireNonNull(parentDir.listFiles())));
+
+        if (inFiles.size() == files.size()) {
             return inFiles;
         }
 
-        Queue<File> files = new LinkedList<>(Arrays.asList(Objects.requireNonNull(parentDir.listFiles())));
         while (!files.isEmpty()) {
             File file = files.remove();
             if (file.isDirectory()) {

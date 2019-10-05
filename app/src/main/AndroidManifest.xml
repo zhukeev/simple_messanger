@@ -12,7 +12,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme.NoActionBar">
-        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustResize">
+        <activity android:name=".LoginActivity" android:theme="@style/AppTheme.NoActionBar" android:windowSoftInputMode="adjustResize|adjustPan">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -22,7 +22,7 @@
         </activity>
         <activity android:name=".ColorChooserActivity" />
         <activity android:name=".IconChooserActivity" />
-        <activity android:name=".CreateMultiListActivity" />
+        <activity android:name=".CreateMultiListActivity" android:windowSoftInputMode="adjustResize"/>
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme.NoActionBar">

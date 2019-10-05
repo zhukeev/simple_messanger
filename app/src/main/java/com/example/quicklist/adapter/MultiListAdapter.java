@@ -12,7 +12,7 @@ import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.quicklist.R;
-import com.example.quicklist.model.MultiList;
+import com.example.quicklist.model.MultiTask;
 import com.example.quicklist.utils.OnItemClickListener;
 
 import java.util.ArrayList;
@@ -23,11 +23,11 @@ public class MultiListAdapter extends RecyclerView.Adapter<MultiListAdapter.MyVi
     Context context;
     OnItemClickListener onItemClickListener;
 
-    private List<MultiList> multiLists = new ArrayList<>();
-    public MultiListAdapter(Context context, List<MultiList> multiLists, OnItemClickListener onItemClickListener) {
+    private List<MultiTask> multiTasks = new ArrayList<>();
+    public MultiListAdapter(Context context, List<MultiTask> multiTasks, OnItemClickListener onItemClickListener) {
         this.context = context;
         this.onItemClickListener = onItemClickListener;
-        this.multiLists = multiLists;
+        this.multiTasks = multiTasks;
     }
 
     @NonNull
@@ -45,7 +45,7 @@ public class MultiListAdapter extends RecyclerView.Adapter<MultiListAdapter.MyVi
 
     @Override
     public int getItemCount() {
-        return multiLists.size() + 1;
+        return multiTasks.size() + 1;
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder {
@@ -81,8 +81,8 @@ public class MultiListAdapter extends RecyclerView.Adapter<MultiListAdapter.MyVi
                 roundView.setVisibility(View.INVISIBLE);
                 return;
             }
-            imageView.setImageResource(multiLists.get(position).getRes_url_image());
-            textView.setText(multiLists.get(position).getTitle());
+            imageView.setImageResource(multiTasks.get(position).getRes_url_image());
+            textView.setText(multiTasks.get(position).getTitle());
         }
     }
 

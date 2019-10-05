@@ -297,22 +297,18 @@ public class LoginActivity extends AppCompatActivity implements View.OnClickList
                 .addOnCompleteListener(this, task -> {
                     if (task.isSuccessful()) {
                         // Sign in success, update UI with the signed-in user's information
-                        Log.d(TAG, "signInWithCredential:success");
 
                         FirebaseUser user = task.getResult().getUser();
                         final DatabaseReference mUserDB = userRef.child(user.getUid());
 
-                        Log.e(TAG, "signInWithPhoneAuthCredential: "+mUserDB.toString() );
 
                         FirebaseInstanceId.getInstance().getInstanceId().addOnSuccessListener(instanceIdResult -> {
 
-                            Log.e(TAG, "signInWithPhoneAuthCredential: token "+instanceIdResult.getToken() );
-                            Map<String,Object> user_info = new HashMap<>();
+                           Map<String,Object> user_info = new HashMap<>();
 
                             user_info.put("token",instanceIdResult.getToken());
                             user_info.put("phone",user.getPhoneNumber());
                             mUserDB.setValue(user_info);
-
 
                         });
 

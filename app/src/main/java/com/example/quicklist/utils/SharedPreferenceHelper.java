@@ -3,6 +3,10 @@ package com.example.quicklist.utils;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import com.google.gson.Gson;
+
+import java.io.Serializable;
+
 public class SharedPreferenceHelper {
     private final static String PREF_FILE = "PREF";
 
@@ -17,7 +21,6 @@ public class SharedPreferenceHelper {
         editor.putString(key, value);
         editor.apply();
     }
-
 
 
     /**

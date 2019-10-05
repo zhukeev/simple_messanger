@@ -14,7 +14,7 @@ import com.example.quicklist.adapter.MultiListAdapter;
 import com.example.quicklist.adapter.ListEventAdapter;
 import com.example.quicklist.model.Event;
 import com.example.quicklist.model.HexColors;
-import com.example.quicklist.model.MultiList;
+import com.example.quicklist.model.MultiTask;
 import com.example.quicklist.utils.OnItemClickListener;
 import com.example.quicklist.utils.SpacesItemDecoration;
 import com.example.quicklist.utils.VerticalSpaceItemDecoration;
@@ -84,13 +84,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerTouchList
 
     }
 
-    private List<MultiList> getMultiList() {
+    private List<MultiTask> getMultiList() {
 
-        List<MultiList> lists = new ArrayList<>();
+        List<MultiTask> lists = new ArrayList<>();
 
-        lists.add(new MultiList("Дни рождения",R.drawable.celeb));
-        lists.add(new MultiList("Рецепты",R.drawable.soup));
-        lists.add(new MultiList("Поездки",R.drawable.beer));
+        lists.add(new MultiTask("Дни рождения",R.drawable.celeb));
+        lists.add(new MultiTask("Рецепты",R.drawable.soup));
+        lists.add(new MultiTask("Поездки",R.drawable.beer));
 
         return lists;
 
