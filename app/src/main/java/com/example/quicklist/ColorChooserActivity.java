@@ -33,6 +33,8 @@ public class ColorChooserActivity extends AppCompatActivity {
 
     private void getExtras() {
 
+        //test
+
         if (getIntent().hasExtra("from")) {
             from = getIntent().getStringExtra("from");
         }
