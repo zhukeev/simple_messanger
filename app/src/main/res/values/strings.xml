@@ -4,6 +4,7 @@
     <string name="recipe">Рецепты</string>
     <string name="lists">Списки</string>
     <string name="name_of_multilist">Введите название мультисписка</string>
+    <string name="name_of_list">Введите название списка</string>
     <string name="icon">Иконка</string>
 
     <string name="new_message_notification_title_template">New message: %1$s</string>
@@ -22,7 +23,7 @@
     <string name="action_reply">Reply</string>
     <string name="create">Создать</string>
     <string name="creating_multilist_hint">Создавая мультисписки вы можете хранить свои списки покупок более упорядочено, а так же вы можете делиться мультисписками с друзьями</string>
-    <string name="icon_choose_hint">На этом этапе вы можете выбрать иконку своего списка покупок для того что бы визуально отличать его из длинного списка остальных...</string>
+    <string name="icon_choose_hint">На этом этапе вы можете выбрать иконку своего списка покупок для того что бы визуально отличать его из длинного списка остальных…</string>
     <string name="confirm">Готово</string>
     <string name="color">Цвет</string>
     <string name="color_choose_hint">На этом этапе вы можете выбрать цвет своего списка покупок для того что бы отличать его по цвету от остальных списков.</string>
@@ -96,5 +97,9 @@
     <string name="resend_sms"><u>Отправить SMS код повторно</u></string>
     <string name="register_info">Регистрация не требуется  просто введите номер телефона и дождитесь СМС</string>
     <string name="second">second</string>
+    <string name="multilist_created_successfully">Мультисписок успшно создано</string>
+    <string name="list_created_successfully">Список успшно создано</string>
+    <string name="couldnt_create_multilist">Не удалось создать мультисписок</string>
+    <string name="couldnt_create_list">Не удалось создать список</string>
 
 </resources>

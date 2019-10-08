@@ -23,6 +23,7 @@ public class IconChooserActivity extends AppCompatActivity {
 
     private static final String TAG = "IconChooserActivity";
     static ArrayList<File> inFiles = new ArrayList<File>();
+    private String from = "list";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,16 @@ public class IconChooserActivity extends AppCompatActivity {
         setContentView(R.layout.activity_icon_chooser);
 
         init();
+
+        getExtras();
+    }
+
+    private void getExtras() {
+
+        if (getIntent().hasExtra("from")) {
+            from = getIntent().getStringExtra("from");
+        }
+
     }
 
     private void init() {
@@ -40,10 +51,20 @@ public class IconChooserActivity extends AppCompatActivity {
         category_rv.setAdapter(new EmojiAdapter(this, getListFiles(getCacheDir()), new OnItemClickListener() {
             @Override
             public void onItemClickListener(int position) {
-                Intent intent = new Intent(IconChooserActivity.this, CreateMultiListActivity.class);
-                intent.putExtra("icon", inFiles.get(position));
-                intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
-                startActivity(intent);
+
+                if (from.equals("list")) {
+
+                    Intent intent = new Intent(IconChooserActivity.this, CreateListActivity.class);
+                    intent.putExtra("icon", inFiles.get(position));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    startActivity(intent);
+                } else {
+                    Intent intent2 = new Intent(IconChooserActivity.this, CreateMultiListActivity.class);
+                    intent2.putExtra("icon", inFiles.get(position));
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    startActivity(intent2);
+                }
+
 
             }
         }));

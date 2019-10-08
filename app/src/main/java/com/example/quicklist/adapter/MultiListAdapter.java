@@ -82,7 +82,7 @@ public class MultiListAdapter extends RecyclerView.Adapter<MultiListAdapter.MyVi
                 return;
             }
             imageView.setImageResource(multiTasks.get(position).getRes_url_image());
-            textView.setText(multiTasks.get(position).getTitle());
+            textView.setText(multiTasks.get(position).getName());
         }
     }
 

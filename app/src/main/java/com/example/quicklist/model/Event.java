@@ -1,11 +1,44 @@
 package com.example.quicklist.model;
 
+import com.google.firebase.database.Exclude;
+
+import java.util.HashMap;
+import java.util.Map;
+
 public class Event {
 
     String title;
     String datetime;
     int image_url;
-    String bg_color;
+    String color;
+    String icon;
+    String key;
+
+    public String getKey() {
+        return key;
+    }
+
+    public void setKey(String key) {
+        this.key = key;
+    }
+
+    public Event() {
+    }
+
+    public Event(String title, String datetime, String icon, String color) {
+        this.title = title;
+        this.datetime = datetime;
+        this.icon = icon;
+        this.color = color;
+    }
+
+    public String getIcon() {
+        return icon;
+    }
+
+    public void setIcon(String icon) {
+        this.icon = icon;
+    }
 
     public String getTitle() {
         return title;
@@ -31,18 +64,40 @@ public class Event {
         this.image_url = image_url;
     }
 
-    public String  getBg_color() {
-        return bg_color;
+    public String getColor() {
+        return color;
     }
 
-    public void setBg_color(String  bg_color) {
-        this.bg_color = bg_color;
+    public void setColor(String color) {
+        this.color = color;
     }
 
-    public Event(String title, String datetime, int image_url, String  bg_color) {
+    public Event(String title, String datetime, int image_url, String color) {
         this.title = title;
         this.datetime = datetime;
         this.image_url = image_url;
-        this.bg_color = bg_color;
+        this.color = color;
+    }
+
+    @Exclude
+    public Map<String, Object> toMap() {
+        HashMap<String, Object> result = new HashMap<>();
+        result.put("color", color);
+        result.put("icon", icon);
+        result.put("datetime", datetime);
+        result.put("title", title);
+        return result;
+    }
+
+    @Override
+    public String toString() {
+        return "Event{" +
+                "title='" + title + '\'' +
+                ", datetime='" + datetime + '\'' +
+                ", image_url=" + image_url +
+                ", color='" + color + '\'' +
+                ", icon='" + icon + '\'' +
+                ", key='" + key + '\'' +
+                '}';
     }
 }

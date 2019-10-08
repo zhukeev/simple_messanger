@@ -18,7 +18,8 @@ import java.util.List;
 public class ColorChooserActivity extends AppCompatActivity {
 
 
-    static List<String > colors = new ArrayList<>();
+    static List<String> colors = new ArrayList<>();
+    private String from = "list";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,6 +31,14 @@ public class ColorChooserActivity extends AppCompatActivity {
 
     }
 
+    private void getExtras() {
+
+        if (getIntent().hasExtra("from")) {
+            from = getIntent().getStringExtra("from");
+        }
+
+    }
+
     private void init() {
         RecyclerView category_rv = findViewById(R.id.color_choose_rv_color_chooser);
 
@@ -38,9 +47,19 @@ public class ColorChooserActivity extends AppCompatActivity {
         category_rv.setAdapter(new ColorListAdapter(this, getColors(), new OnItemClickListener() {
             @Override
             public void onItemClickListener(int position) {
-                Intent intent = new Intent(ColorChooserActivity.this,CreateMultiListActivity.class);
-                intent.putExtra("color",colors.get(position));
-                startActivity(intent);
+
+                if (from.equals("list")) {
+
+                    Intent intent = new Intent(ColorChooserActivity.this, CreateListActivity.class);
+                    intent.putExtra("color", colors.get(position));
+                    intent.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    startActivity(intent);
+                } else {
+                    Intent intent2 = new Intent(ColorChooserActivity.this, CreateMultiListActivity.class);
+                    intent2.putExtra("color", colors.get(position));
+                    intent2.addFlags(Intent.FLAG_ACTIVITY_NO_HISTORY);
+                    startActivity(intent2);
+                }
 
             }
         }));
@@ -48,7 +67,7 @@ public class ColorChooserActivity extends AppCompatActivity {
 
     private List<String> getColors() {
 
-        if (!colors.isEmpty()){
+        if (!colors.isEmpty()) {
             return colors;
         }
 

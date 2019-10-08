@@ -6,12 +6,15 @@ import android.util.Log;
 import android.view.MotionEvent;
 import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
-import com.example.quicklist.adapter.MultiListAdapter;
 import com.example.quicklist.adapter.ListEventAdapter;
+import com.example.quicklist.adapter.MultiListAdapter;
 import com.example.quicklist.model.Event;
 import com.example.quicklist.model.HexColors;
 import com.example.quicklist.model.MultiTask;
@@ -20,6 +23,14 @@ import com.example.quicklist.utils.SpacesItemDecoration;
 import com.example.quicklist.utils.VerticalSpaceItemDecoration;
 import com.example.recyclerviewenhanced.OnActivityTouchListener;
 import com.example.recyclerviewenhanced.RecyclerTouchListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.ChildEventListener;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -28,59 +39,114 @@ public class MainActivity extends AppCompatActivity implements RecyclerTouchList
 
     private static final String TAG = "MainActivity";
 
-    RecyclerView event_list_rv;
+    RecyclerView list_rv;
     RecyclerTouchListener onTouchListener;
     private OnActivityTouchListener touchListener;
+    private ListEventAdapter listEventAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
         init();
+
+//        listChildEventListener();
+    }
+
+    private void listChildEventListener() {
+        FirebaseAuth mAuth = FirebaseAuth.getInstance();
+        FirebaseUser currentUser = mAuth.getCurrentUser();
+
+        DatabaseReference listsRef = FirebaseDatabase.getInstance().getReference().child("lists").child(currentUser.getUid());
+
+        listsRef.addChildEventListener(new ChildEventListener() {
+            @Override
+            public void onChildAdded(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+                Event event = dataSnapshot.getValue(Event.class);
+
+            }
+
+            @Override
+            public void onChildChanged(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onChildRemoved(@NonNull DataSnapshot dataSnapshot) {
+
+            }
+
+            @Override
+            public void onChildMoved(@NonNull DataSnapshot dataSnapshot, @Nullable String s) {
+
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
     }
 
     private void init() {
 
-        RecyclerView category_rv = findViewById(R.id.category_recycler_view_main);
 
-        category_rv.setNestedScrollingEnabled(false);
-        category_rv.addItemDecoration(new SpacesItemDecoration(MainActivity.this, 8));
-        category_rv.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
-        category_rv.setAdapter(new MultiListAdapter(MainActivity.this,getMultiList() ,new OnItemClickListener() {
+        //region setup MultiList RecyclerView
+        RecyclerView multiList_rv = findViewById(R.id.category_recycler_view_main);
+
+        multiList_rv.setNestedScrollingEnabled(false);
+        multiList_rv.addItemDecoration(new SpacesItemDecoration(MainActivity.this, 8));
+        multiList_rv.setLayoutManager(new GridLayoutManager(MainActivity.this, 2));
+        multiList_rv.setAdapter(new MultiListAdapter(MainActivity.this, getMultiList(), new OnItemClickListener() {
             @Override
             public void onItemClickListener(int position) {
 
-                if (position==getMultiList().size()){
-                    startActivity(new Intent(MainActivity.this,CreateMultiListActivity.class));
+                if (position == getMultiList().size()) {
+                    startActivity(new Intent(MainActivity.this, CreateMultiListActivity.class));
                 }
 
-                Log.e(TAG, "onItemClickListener: "+getMultiList().size() );
-                Log.e(TAG, "onItemClickListener: "+position );
+                Log.e(TAG, "onItemClickListener: " + getMultiList().size());
+                Log.e(TAG, "onItemClickListener: " + position);
             }
         }));
+        //endregion
 
 
-        event_list_rv = findViewById(R.id.list_recycler_view_main);
+        //region List RecyclerView
+        list_rv = findViewById(R.id.list_recycler_view_main);
 
-        event_list_rv.setNestedScrollingEnabled(false);
-        event_list_rv.addItemDecoration(new VerticalSpaceItemDecoration(MainActivity.this, 8));
-        event_list_rv.setLayoutManager(new GridLayoutManager(MainActivity.this, 1));
-        event_list_rv.setAdapter(new ListEventAdapter(MainActivity.this, getEvents()));
+        list_rv.setNestedScrollingEnabled(false);
+        list_rv.addItemDecoration(new VerticalSpaceItemDecoration(MainActivity.this, 8));
+        list_rv.setLayoutManager(new LinearLayoutManager(MainActivity.this));
+        list_rv.setHasFixedSize(true);
 
-        onTouchListener = new RecyclerTouchListener(MainActivity.this, event_list_rv);
+        list_rv.setAdapter(new ListEventAdapter(MainActivity.this, getEvents()));
+
+
+        onTouchListener = new RecyclerTouchListener(MainActivity.this, list_rv);
 
         onTouchListener.setSwipeOptionViews(R.id.share_item, R.id.remove_item)
-                .setSwipeable(R.id.front, R.id.back, new RecyclerTouchListener.OnSwipeOptionsClickListener() {
-                    @Override
-                    public void onSwipeOptionClicked(int viewID, int position) {
-                        if (viewID == R.id.share_item) {
-                            Toast.makeText(MainActivity.this, "Share", Toast.LENGTH_SHORT).show();
-                        } else
-                            Toast.makeText(MainActivity.this, "Remove", Toast.LENGTH_SHORT).show();
+                .setSwipeable(R.id.front, R.id.back, (viewID, position) -> {
+
+                    if (viewID == R.id.share_item) {
+                        Toast.makeText(MainActivity.this, "Share", Toast.LENGTH_SHORT).show();
+                    } else{
+
+//                        Log.e(TAG, "init: "+position );
+
+                        listEventAdapter.removeList(position);
+//                        Toast.makeText(MainActivity.this, "Remove", Toast.LENGTH_SHORT).show();
                     }
                 });
+        //endregion
 
+
+        FloatingActionButton fab = findViewById(R.id.create_list_fab);
+        fab.setOnClickListener(view -> {
+            Intent intent = new Intent(MainActivity.this, CreateListActivity.class);
+            startActivity(intent);
+        });
 
     }
 
@@ -88,9 +154,9 @@ public class MainActivity extends AppCompatActivity implements RecyclerTouchList
 
         List<MultiTask> lists = new ArrayList<>();
 
-        lists.add(new MultiTask("Дни рождения",R.drawable.celeb));
-        lists.add(new MultiTask("Рецепты",R.drawable.soup));
-        lists.add(new MultiTask("Поездки",R.drawable.beer));
+        lists.add(new MultiTask("Дни рождения", R.drawable.celeb));
+        lists.add(new MultiTask("Рецепты", R.drawable.soup));
+        lists.add(new MultiTask("Поездки", R.drawable.beer));
 
         return lists;
 
@@ -115,13 +181,13 @@ public class MainActivity extends AppCompatActivity implements RecyclerTouchList
     protected void onResume() {
         super.onResume();
 
-        event_list_rv.addOnItemTouchListener(onTouchListener);
+        list_rv.addOnItemTouchListener(onTouchListener);
     }
 
     @Override
     protected void onPause() {
         super.onPause();
-        event_list_rv.removeOnItemTouchListener(onTouchListener);
+        list_rv.removeOnItemTouchListener(onTouchListener);
     }
 
     @Override

@@ -1,5 +1,7 @@
 package com.example.quicklist;
 
+import android.app.DatePickerDialog;
+import android.app.TimePickerDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.graphics.Color;
@@ -22,7 +24,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.quicklist.model.EmojiIcon;
-import com.example.quicklist.model.MultiTask;
+import com.example.quicklist.model.Event;
 import com.example.quicklist.utils.SharedPreferenceHelper;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -33,12 +35,14 @@ import com.google.firebase.storage.StorageReference;
 
 import java.io.File;
 import java.io.Serializable;
+import java.text.DateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.List;
 
-public class CreateMultiListActivity extends AppCompatActivity implements View.OnClickListener {
+public class CreateListActivity extends AppCompatActivity {
 
-    private static final String TAG = "CreateMultiListActivity";
+    private static final String TAG = "CreateListActivity";
 
     private StorageReference mStorageRef;
     private ImageView imageViewIcon;
@@ -47,20 +51,22 @@ public class CreateMultiListActivity extends AppCompatActivity implements View.O
     static List<EmojiIcon> emojiIcons = new ArrayList<>();
     private Serializable icon_serializable;
     private String color = "";
-    private DatabaseReference multiListRef;
+    private DatabaseReference listsRef;
     private Button createBtn;
     private String iconPath;
+    private EditText date_time_et;
+    private FirebaseUser currentUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_create_multi_list);
+        setContentView(R.layout.activity_create_event);
 
         mStorageRef = FirebaseStorage.getInstance().getReference();
         FirebaseAuth mAuth = FirebaseAuth.getInstance();
-        FirebaseUser currentUser = mAuth.getCurrentUser();
+        currentUser = mAuth.getCurrentUser();
 
-        multiListRef = FirebaseDatabase.getInstance().getReference().child("multiLists").child(currentUser.getUid());
+
         init();
 
         getExtras();
@@ -129,28 +135,55 @@ public class CreateMultiListActivity extends AppCompatActivity implements View.O
 
     private void init() {
 
-        imageViewIcon = findViewById(R.id.category_icon_multi_list);
-        editTextName = findViewById(R.id.name_et_multilist);
-        color_ll = findViewById(R.id.color_ll_multi_list);
-        createBtn = findViewById(R.id.create_btn_create_multilist);
 
-        createBtn.setOnClickListener(this);
+        imageViewIcon = findViewById(R.id.category_icon_list);
+        editTextName = findViewById(R.id.name_et_list);
+        color_ll = findViewById(R.id.color_ll_list);
+        createBtn = findViewById(R.id.create_btn_create_list);
+        date_time_et = findViewById(R.id.datetime_et_list);
+
+        date_time_et.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                showDateTimePicker();
+            }
+        });
+
+        createBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                listsRef = FirebaseDatabase.getInstance().getReference().child("lists").child(currentUser.getUid());
+                Event event = new Event(editTextName.getText().toString(),
+                        date_time_et.getText().toString(),
+                        iconPath.substring(iconPath.lastIndexOf('/')),
+                        color);
+
+                String multiListKey = listsRef.push().getKey();
+
+                listsRef.child(multiListKey).updateChildren(event.toMap()).addOnFailureListener(e -> {
+                    Log.e(TAG, "onFailure: " + e.getLocalizedMessage());
+                    Toast.makeText(CreateListActivity.this, getString(R.string.couldnt_create_list), Toast.LENGTH_SHORT).show();
+                }).addOnSuccessListener(aVoid -> {
+                    Toast.makeText(CreateListActivity.this, getString(R.string.list_created_successfully), Toast.LENGTH_SHORT).show();
+                });
+
+                startActivity(new Intent(CreateListActivity.this, MainActivity.class));
+            }
+        });
 
 
         findViewById(R.id.round_holder_fl).setOnClickListener(view -> {
 
-            Intent intent = new Intent(CreateMultiListActivity.this, IconChooserActivity.class);
-
-            intent.putExtra("from", "multilist");
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            Intent intent = new Intent(CreateListActivity.this, IconChooserActivity.class);
+            intent.putExtra("from", "list");
             startActivity(intent);
         });
 
         color_ll.setOnClickListener(view -> {
-            Intent intent = new Intent(CreateMultiListActivity.this, ColorChooserActivity.class);
-            intent.putExtra("from", "multilist");
-//            intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TASK);
+            Intent intent = new Intent(CreateListActivity.this, ColorChooserActivity.class);
+            intent.putExtra("from", "list");
             startActivity(intent);
+
         });
 
 
@@ -175,6 +208,29 @@ public class CreateMultiListActivity extends AppCompatActivity implements View.O
 
     }
 
+    private void showDateTimePicker() {
+        final Calendar currentDate = Calendar.getInstance();
+        Calendar date;
+        date = Calendar.getInstance();
+        new DatePickerDialog(this, (view, year, monthOfYear, dayOfMonth) -> {
+
+            date.set(year, monthOfYear, dayOfMonth);
+            new TimePickerDialog(this, (view1, hourOfDay, minute) -> {
+                date.set(Calendar.HOUR_OF_DAY, hourOfDay);
+                date.set(Calendar.MINUTE, minute);
+
+                DateFormat df = DateFormat.getDateTimeInstance(DateFormat.LONG, DateFormat.SHORT);
+                df.format(date.getTime());
+
+                date_time_et.setText(df.format(date.getTime()));
+
+
+            }, currentDate.get(Calendar.HOUR_OF_DAY), currentDate.get(Calendar.MINUTE), false).show();
+        }, currentDate.get(Calendar.YEAR), currentDate.get(Calendar.MONTH), currentDate.get(Calendar.DATE)).show();
+
+    }
+
+
     @Override
     public boolean dispatchTouchEvent(MotionEvent event) {
 
@@ -193,23 +249,5 @@ public class CreateMultiListActivity extends AppCompatActivity implements View.O
         }
 
         return super.dispatchTouchEvent(event);
-    }
-
-    @Override
-    public void onClick(View view) {
-
-        MultiTask multiTask1 = new MultiTask(
-                editTextName.getText().toString(),
-                iconPath.substring(iconPath.lastIndexOf('/')), color);
-
-        String multiTaskKey = multiListRef.push().getKey();
-
-        multiListRef.child(multiTaskKey)
-                .updateChildren(multiTask1.toMap())
-                .addOnSuccessListener(aVoid -> {
-                    Toast.makeText(CreateMultiListActivity.this, getString(R.string.multilist_created_successfully), Toast.LENGTH_SHORT).show();
-                }).addOnFailureListener(e -> {
-            Toast.makeText(CreateMultiListActivity.this, getString(R.string.couldnt_create_multilist) + " \n" + e.getMessage(), Toast.LENGTH_SHORT).show();
-        });
     }
 }
