@@ -17,6 +17,7 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookinglaneadmin.R;
+import com.example.bookinglaneadmin.utils.OnItemClickListener;
 
 
 public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyViewHolder> {
@@ -28,7 +29,7 @@ public class CategoryAdapter extends RecyclerView.Adapter<CategoryAdapter.MyView
     private OnItemClickListener onItemClickListener;
     private int chosenElement = 0;
 
-    public CategoryAdapter(Context context, AdapterView.OnItemClickListener onItemClickListener) {
+    public CategoryAdapter(Context context, OnItemClickListener onItemClickListener) {
         this.context = context;
         this.onItemClickListener = onItemClickListener;
     }

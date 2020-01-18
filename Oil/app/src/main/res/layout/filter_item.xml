@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="8dp">
+
+
+        <ImageView
+            android:id="@+id/image_filter_item"
+            android:layout_width="120dp"
+            android:layout_height="wrap_content"
+            android:adjustViewBounds="false"
+            android:layout_centerVertical="true"
+            android:layout_alignParentStart="true"
+            android:src="@drawable/filter" />
+
+        <TextView
+            android:id="@+id/title_tv_filter_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/image_filter_item"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/image_filter_item"
+            android:text="Mannol Molibden Benzin 10W-40"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/models_tv_filter_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_tv_filter_item"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_filter_item"
+            android:text="Состав: полусинтетическое моторное масло" />
+
+        <TextView
+            android:id="@+id/engines_tv_filter_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/models_tv_filter_item"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_filter_item"
+            android:text="класс вязкости 10W-40" />
+
+
+        <Button
+            android:id="@+id/edit_btn_filter_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/engines_tv_filter_item"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/image_filter_item"
+            android:background="@drawable/orange_button_round_corner"
+            android:text="@string/edit" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

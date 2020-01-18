@@ -1,0 +1,120 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:padding="8dp"
+        android:layout_height="match_parent">
+
+
+        <ImageView
+            android:id="@+id/image_oil_item"
+            android:layout_width="120dp"
+            android:layout_height="120dp"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:src="@drawable/oil_image" />
+
+        <TextView
+            android:id="@+id/title_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignTop="@id/image_oil_item"
+            android:layout_marginStart="8dp"
+            android:layout_toEndOf="@id/image_oil_item"
+            android:text="Mannol Molibden Benzin 10W-40"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/composition_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/title_tv_oil_item"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_oil_item"
+            android:text="Состав: полусинтетическое моторное масло" />
+
+        <TextView
+            android:id="@+id/viscosity_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/composition_tv_oil_item"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_oil_item"
+            android:text="класс вязкости 10W-40" />
+
+        <TextView
+            android:id="@+id/class_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/viscosity_tv_oil_item"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_oil_item"
+            android:text="класс API SL / ACEA A3/B3" />
+
+        <TextView
+            android:id="@+id/engine_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/class_tv_oil_item"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_oil_item"
+            android:text="двигатель: бензиновый или дизельный,четырехтактный" />
+
+        <TextView
+            android:id="@+id/turbo_charged_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/engine_tv_oil_item"
+            android:textStyle="bold"
+            android:layout_marginStart="16dp"
+            android:layout_toEndOf="@id/image_oil_item"
+            android:text="Подходит для турбированных двигателей " />
+
+        <TextView
+            android:id="@+id/warehouse_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/image_oil_item"
+            android:layout_alignStart="@id/image_oil_item"
+            android:layout_alignEnd="@id/image_oil_item"
+            android:text="На складе: 20 000 .л" />
+
+        <TextView
+            android:id="@+id/came_warehouse_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/warehouse_tv_oil_item"
+            android:layout_alignStart="@id/image_oil_item"
+            android:layout_alignEnd="@id/image_oil_item"
+            android:text="Приход: 120с/л" />
+
+        <TextView
+            android:id="@+id/sold_tv_oil_item"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/came_warehouse_tv_oil_item"
+            android:layout_alignStart="@id/image_oil_item"
+            android:layout_alignEnd="@id/image_oil_item"
+            android:text="Реализация: 150с/л" />
+
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/turbo_charged_tv_oil_item"
+            android:layout_alignParentEnd="true"
+            android:text="@string/edit"
+            android:id="@+id/edit_btn_oil_item"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_toEndOf="@id/image_oil_item"
+            android:background="@drawable/orange_button_round_corner" />
+
+
+    </RelativeLayout>
+
+</androidx.cardview.widget.CardView>

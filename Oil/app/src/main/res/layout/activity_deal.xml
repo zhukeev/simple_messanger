@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:paddingStart="16dp"
+    android:paddingTop="16dp"
+    android:paddingEnd="16dp"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    tools:context=".ui.deal.DealActivity">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/order"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/order_id"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:text="@string/_25" />
+
+
+        <LinearLayout
+            android:id="@+id/address_container_ll"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/address_et"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:drawableEnd="@drawable/ic_add_black_24dp"
+                android:hint="@string/address"
+                android:imeOptions="actionNext"
+                android:inputType="text" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/date_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="@string/date"
+            android:imeOptions="actionNext"
+            android:inputType="date" />
+
+        <EditText
+            android:id="@+id/time_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:focusable="false"
+            android:hint="@string/time"
+            android:imeOptions="actionNext"
+            android:inputType="date" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/customer_info"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/fullname_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/fullname"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/datOfBirth_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/dateofBirth"
+            android:imeOptions="actionNext"
+            android:inputType="textPersonName" />
+
+
+        <EditText
+            android:id="@+id/email_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/mail"
+            android:imeOptions="actionNext"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/phone_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Телефон"
+            android:imeOptions="actionNext"
+            android:inputType="phone" />
+
+
+        <RadioGroup
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/whatsapp" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:text="@string/i_have" />
+
+            <RadioButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/i_dont_have" />
+
+        </RadioGroup>
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/deal_info"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/car_brand_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:drawableEnd="@drawable/ic_right_arrow_black_16dp"
+            android:focusable="false"
+            android:hint="@string/car_brand"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/car_model_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:drawableEnd="@drawable/ic_right_arrow_black_16dp"
+            android:focusable="false"
+            android:hint="@string/car_model"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/mileage_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/current_mileage"
+            android:inputType="number" />
+
+
+        <EditText
+            android:id="@+id/kinda_service_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:drawableEnd="@drawable/ic_right_arrow_black_16dp"
+            android:focusable="false"
+            android:hint="@string/kinda_service"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/oil_brand_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:drawableEnd="@drawable/ic_right_arrow_black_16dp"
+            android:focusable="false"
+            android:hint="@string/oil_brand"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/filter_brand_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:drawableEnd="@drawable/ic_right_arrow_black_16dp"
+            android:focusable="false"
+            android:hint="@string/filter_brand"
+            android:inputType="text" />
+
+        <EditText
+            android:id="@+id/oil_volume_et"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/current_mileage"
+            android:inputType="number" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="32dp"
+            android:text="@string/calculation"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/sum_calc_tv_deal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/sum" />
+
+        <TextView
+            android:id="@+id/oil_calc_tv_deal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/oil" />
+
+        <TextView
+            android:id="@+id/filter_calc_tv_deal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/filter" />
+
+        <TextView
+            android:id="@+id/drive_calc_tv_deal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/drive" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal">
+
+            <EditText
+                android:id="@+id/next_change_et"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:clickable="false"
+                android:drawableEnd="@drawable/ic_right_arrow_black_16dp"
+                android:focusable="false"
+                android:layout_marginEnd="8dp"
+                android:textSize="10sp"
+                android:hint="@string/next_change"
+                android:inputType="text" />
+
+            <Button
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:textSize="10sp"
+                android:text="@string/finish_transaction" />
+        </LinearLayout>
+
+    </LinearLayout>
+</ScrollView>

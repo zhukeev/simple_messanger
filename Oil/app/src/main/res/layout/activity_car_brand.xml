@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        tools:context=".ui.manual.car_brand.CarBrandActivity">
+
+
+        <TextView
+            android:id="@+id/find_car_car_brand"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/find_car"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.example.oil.custom_view.HintSpinner
+            android:id="@+id/manufacturer_spinner_car_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.oil.custom_view.HintSpinner
+            android:id="@+id/model_spinner_car_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.oil.custom_view.HintSpinner
+            android:id="@+id/generation_spinner_car_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.oil.custom_view.HintSpinner
+            android:id="@+id/car_body_spinner_car_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <com.example.oil.custom_view.HintSpinner
+            android:id="@+id/year_of_manufacture_spinner_car_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/cars_rv_car_brand"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:clipToPadding="false"
+            android:paddingTop="8dp" />
+
+    </LinearLayout>
+</androidx.core.widget.NestedScrollView>

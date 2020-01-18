@@ -22,6 +22,10 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.bookinglaneadmin.R;
+import com.example.bookinglaneadmin.adapter.CarListAdapter;
+import com.example.bookinglaneadmin.customView.CustomSeekBar;
+import com.example.bookinglaneadmin.customView.OutsetDrawable;
+import com.example.bookinglaneadmin.utils.VerticalSpaceItemDecoration;
 
 
 public class HomeFragment extends Fragment {
